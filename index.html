@@ -7,8 +7,27 @@
 </head>
 <body>
   <script>
+    // create a function that randomly returns rock, paper or scissors.
+    // maybe using the Math.random method
+    function getComputerChoice() {
+      const randomNumber = Math.random();
 
-    
+      if (randomNumber < 0.33) {
+        return "Rock";
+      }
+      else if (randomNumber < 0.66) {
+        return "Paper";
+      }
+      else {
+        return "Scissors";
+      }
+    }
+    // create a function that takes the user choice and returns it 
+    // that user function has to return one of the valid choices
+    // use prompt to get the user choice
+    // track the player and the computer score using two variables
+    // write the logic to play a single round (maybe harder)
+    // write the logic to play the entire game by 5 rounds 
   </script>
 </body>
 </html>
