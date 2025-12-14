@@ -29,9 +29,7 @@
 
     var humanScore = 0;
     var computerScore = 0;
-    var humanChoice = getHumanChoice();
-    var computerChoice = getComputerChoice();
-    // write the logic to play a single round (maybe harder)
+    
     function playRound(humanChoice, computerChoice) {
       if(humanChoice === "rock" && computerChoice === "paper") {
         computerScore++;
@@ -61,7 +59,43 @@
         console.log("Draw!");
       }
     }
-    // write the logic to play the entire game by 5 rounds 
+
+    function playGame() {
+      humanScore = 0;
+      computerScore = 0;
+
+      var humanChoice = getHumanChoice();
+      var computerChoice = getComputerChoice();
+      playRound(humanChoice, computerChoice);
+
+      humanChoice = getHumanChoice();
+      computerChoice = getComputerChoice();
+      playRound(humanChoice, computerChoice);
+
+      humanChoice = getHumanChoice();
+      computerChoice = getComputerChoice();
+      playRound(humanChoice, computerChoice);
+
+      humanChoice = getHumanChoice();
+      computerChoice = getComputerChoice();
+      playRound(humanChoice, computerChoice);
+
+      humanChoice = getHumanChoice();
+      computerChoice = getComputerChoice();
+      playRound(humanChoice, computerChoice);
+
+      if(humanScore > computerScore) {
+        alert("You are the winner! Congratulations!")
+      }
+      else if(humanScore < computerScore) {
+        alert("You lose to the machine! Lol")
+      }
+      else {
+        alert("You draw with the machine!")
+      }
+    }
+
+    playGame()
   </script>
 </body>
 </html>
