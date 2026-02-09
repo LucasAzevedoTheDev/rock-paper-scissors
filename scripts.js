@@ -51,39 +51,60 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-function playGame() {
-  humanScore = 0;
-  computerScore = 0;
+// function playGame() {
+//   humanScore = 0;
+//   computerScore = 0;
 
-  var humanChoice = getHumanChoice();
-  var computerChoice = getComputerChoice();
-  playRound(humanChoice, computerChoice);
+//   var humanChoice = getHumanChoice();
+//   var computerChoice = getComputerChoice();
+//   playRound(humanChoice, computerChoice);
 
-  humanChoice = getHumanChoice();
-  computerChoice = getComputerChoice();
-  playRound(humanChoice, computerChoice);
+//   humanChoice = getHumanChoice();
+//   computerChoice = getComputerChoice();
+//   playRound(humanChoice, computerChoice);
 
-  humanChoice = getHumanChoice();
-  computerChoice = getComputerChoice();
-  playRound(humanChoice, computerChoice);
+//   humanChoice = getHumanChoice();
+//   computerChoice = getComputerChoice();
+//   playRound(humanChoice, computerChoice);
 
-  humanChoice = getHumanChoice();
-  computerChoice = getComputerChoice();
-  playRound(humanChoice, computerChoice);
+//   humanChoice = getHumanChoice();
+//   computerChoice = getComputerChoice();
+//   playRound(humanChoice, computerChoice);
 
-  humanChoice = getHumanChoice();
-  computerChoice = getComputerChoice();
-  playRound(humanChoice, computerChoice);
+//   humanChoice = getHumanChoice();
+//   computerChoice = getComputerChoice();
+//   playRound(humanChoice, computerChoice);
 
-  if(humanScore > computerScore) {
-    alert("You are the winner! Congratulations!")
-  }
-  else if(humanScore < computerScore) {
-    alert("You lose to the machine! Lol")
-  }
-  else {
-    alert("You draw with the machine!")
-  }
-}
+//   if(humanScore > computerScore) {
+//     alert("You are the winner! Congratulations!")
+//   }
+//   else if(humanScore < computerScore) {
+//     alert("You lose to the machine! Lol")
+//   }
+//   else {
+//     alert("You draw with the machine!")
+//   }
+// }
 
-playGame()
+// playGame()
+
+const rockButton = document.createElement("button");
+const paperButton = document.createElement("button");
+const scissorsButton = document.createElement("button");
+
+rockButton.textContent = "ROCK";
+paperButton.textContent = "PAPER";
+scissorsButton.textContent = "SCISSORS";
+
+rockButton.addEventListener("click", 
+  () => playRound("rock", getComputerChoice()));
+
+paperButton.addEventListener("click", 
+  () => playRound("paper", getComputerChoice()));
+
+scissorsButton.addEventListener("click", 
+  () => playRound("scissors", getComputerChoice()));
+
+document.body.appendChild(rockButton);
+document.body.appendChild(paperButton);
+document.body.appendChild(scissorsButton);
