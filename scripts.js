@@ -21,8 +21,12 @@ document.body.appendChild(paperButton);
 document.body.appendChild(scissorsButton);
 
 const displayDiv = document.createElement("div");
-const liveResults = document.createElement("p");
+const liveResults = document.createElement("h4");
+const liveScore = document.createElement("p");
+const winnerOutput = document.createElement("h3");
 displayDiv.appendChild(liveResults);
+displayDiv.appendChild(liveScore);
+displayDiv.appendChild(winnerOutput);
 document.body.appendChild(displayDiv);
 
 function getComputerChoice() {
@@ -45,10 +49,19 @@ function getHumanChoice() {
   return humanValue.toLowerCase();
 }
 
-var humanScore = 0;
-var computerScore = 0;
-    let output = "";
+let humanScore = 0;
+let computerScore = 0;
+let output = "";
+let winner = "";
+
 function playRound(humanChoice, computerChoice) {
+  
+  if(humanScore === 5 || computerScore === 5 ) {
+    computerScore = 0;
+    humanScore = 0;
+    winner = "";
+  }
+
   if(humanChoice === "rock" && computerChoice === "paper") {
     computerScore++;
     output = "You lose! Paper beats Rock";
@@ -77,43 +90,15 @@ function playRound(humanChoice, computerChoice) {
     output = "Draw!";
   }
 
-  liveResults.textContent = output;
+
+  if(humanScore === 5) {
+     winner = "You are the winner! Congratulations!";
+   }
+   else if(computerScore === 5) {
+     winner = "You lose to the machine! Lol";
+   }
+
+    liveResults.textContent = output;
+    winnerOutput.textContent = winner;
+    liveScore.textContent = `SCORE - YOU: ${humanScore} | MACHINE: ${computerScore}`;
 }
-
-// function playGame() {
-//   humanScore = 0;
-//   computerScore = 0;
-
-//   var humanChoice = getHumanChoice();
-//   var computerChoice = getComputerChoice();
-//   playRound(humanChoice, computerChoice);
-
-//   humanChoice = getHumanChoice();
-//   computerChoice = getComputerChoice();
-//   playRound(humanChoice, computerChoice);
-
-//   humanChoice = getHumanChoice();
-//   computerChoice = getComputerChoice();
-//   playRound(humanChoice, computerChoice);
-
-//   humanChoice = getHumanChoice();
-//   computerChoice = getComputerChoice();
-//   playRound(humanChoice, computerChoice);
-
-//   humanChoice = getHumanChoice();
-//   computerChoice = getComputerChoice();
-//   playRound(humanChoice, computerChoice);
-
-//   if(humanScore > computerScore) {
-//     alert("You are the winner! Congratulations!")
-//   }
-//   else if(humanScore < computerScore) {
-//     alert("You lose to the machine! Lol")
-//   }
-//   else {
-//     alert("You draw with the machine!")
-//   }
-// }
-
-// playGame()
-
