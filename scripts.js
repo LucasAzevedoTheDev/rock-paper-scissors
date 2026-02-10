@@ -43,12 +43,6 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  const humanValue = prompt("Rock, paper or scissors?", "")
-
-  return humanValue.toLowerCase();
-}
-
 let humanScore = 0;
 let computerScore = 0;
 let output = "";
