@@ -49,13 +49,14 @@ let output = "";
 let winner = "";
 
 function playRound(humanChoice, computerChoice) {
-  
+ 
+  // RESET CONDITION
   if(humanScore === 5 || computerScore === 5 ) {
     computerScore = 0;
     humanScore = 0;
     winner = "";
   }
-
+  // GAME LOGIC
   if(humanChoice === "rock" && computerChoice === "paper") {
     computerScore++;
     output = "You lose! Paper beats Rock";
@@ -84,7 +85,7 @@ function playRound(humanChoice, computerChoice) {
     output = "Draw!";
   }
 
-
+  // FINAL OUTPUT
   if(humanScore === 5) {
      winner = "You are the winner! Congratulations!";
    }
